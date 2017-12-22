@@ -1,0 +1,18 @@
+name: "Readiness to Disclose Pediatric HIV Status to Children"
+output_dir: "."
+navbar:
+  title: "R2D2"
+  type: inverse
+  left:
+    - text: "Home"
+      href: index.html
+output:
+  html_document:
+    theme: yeti
+    highlight: tango
+    fig_caption: true
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+    css: styles.css
