@@ -1,18 +1,27 @@
-name: "Readiness to Disclose Pediatric HIV Status to Children"
-output_dir: "."
+name: Readiness to Disclose Pediatric HIV Status to Children
+output_dir: '.'
 navbar:
-  title: "R2D2"
+  title: R2D2
   type: inverse
   left:
-    - text: "Home"
-      href: index.html
+  - text: Home
+    href: index.html
+  - text: Team
+    href: team.html
+  - text: Methods
+    href: methods.html
+  - text: Prevalence and Process
+    href: prevalence.html
 output:
   html_document:
     theme: yeti
     highlight: tango
-    fig_caption: true
-    toc: true
+    fig_caption: yes
+    toc: yes
     toc_float:
-      collapsed: false
-      smooth_scroll: true
+      collapsed: no
+      smooth_scroll: yes
     css: styles.css
+    lib_dir: site_libs
+    self_contained: no
+
