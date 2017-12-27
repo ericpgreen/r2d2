@@ -1,0 +1,12 @@
+name: litapp
+title: litapp
+username:
+account: globalhealthresearch
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 251918
+bundleId: 1152461
+url: https://globalhealthresearch.shinyapps.io/litapp/
+when: 1514396147.76848
+asMultiple: FALSE
+asStatic: FALSE

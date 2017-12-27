@@ -11,7 +11,7 @@ output:
 
 # Metadata
 
-```{r, echo=FALSE, results='asis'}
+```{r, echo=FALSE}
   tbl <- data.frame(Element=c("Journal", "Pre-Print", "Paper Citation", 
                               "Data Citation"),
                     Details=c("Under review",

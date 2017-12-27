@@ -1,0 +1,7 @@
+---
+output:
+  html_document:
+    toc_float: false
+---
+
+<iframe src="https://globalhealthresearch.shinyapps.io/litapp/" style="border: none; width: 1000px; height: 1000px;"></iframe>
