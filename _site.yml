@@ -10,12 +10,14 @@ navbar:
     href: team.html
   - text: Methods
     href: methods.html
-  - text: Prevalence and Process
-    href: prevalence.html
-  - text: Consequences
-    href: consequences.html
-  - text: R2D2 Instrument
-    href: instrument.html
+  - text: Papers
+    menu: 
+    - text: Prevalence and Process
+      href: prevalence.html
+    - text: Consequences
+      href: consequences.html
+    - text: R2D2 Instrument
+      href: instrument.html
   - text: Estimates of Disclosure
     href: "http://www.shinyapps.io/"
     icon: fa-external-link
