@@ -12,15 +12,18 @@ output:
 # Metadata
 
 ```{r, echo=FALSE}
-  tbl <- data.frame(Element=c("Journal", "Pre-Print", "Paper Citation", 
+  tbl <- data.frame(Element=c("Paper Citation", 
+                              "Journal Copy", 
+                              "Pre-Print", 
                               "Data Citation"),
-                    Details=c("Under review",
+                    Details=c("Finnegan, A., Langhaug, L., Schenk, K., Rusakaniko, S., Puffer, E., Choi, Y., Mahaso, S., & Green, E.P. (under review). The prevalence and process of pediatric HIV disclosure: A population-based prospective cohort study in Zimbabwe.",
                               "Under review",
-                              "Finnegan, A., Langhaug, L., Schenk, K., Rusakaniko, S., Puffer, E., Choi, Y., Mahaso, S., & Green, E.P. (under review). The prevalence and process of pediatric HIV disclosure: A population-based prospective cohort study in Zimbabwe.",
+                              "Under review",
                               "Green, E.P., Finnegan, A., Schenk, K., Langhaug, L., & Puffer, E. (2017). R2D2 data repository. [![DOI](https://zenodo.org/badge/115128290.svg)](https://zenodo.org/badge/latestdoi/115128290)"))
 
 tbl %>%
   kable("html") %>%
   kable_styling(bootstrap_options = c("striped", "hover", 
-                                      "condensed", "responsive"))
+                                      "condensed", "responsive")) %>%
+  column_spec(1, width = "10em")
 ```
