@@ -1,0 +1,8 @@
+---
+title: "The prevalence and process of pediatric HIV disclosure: A population-based prospective cohort study in Zimbabwe"
+output:
+  html_document:
+    toc_float: true
+---
+
+This paper is under review. Some journals have restrictive policies about pre-prints and sharing work online prior to publication, so we have decided to wait until articles are in-press to release information here.

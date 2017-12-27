@@ -1,0 +1,8 @@
+---
+title: "Developing and validating a measure of caregiver readiness to disclose pediatric HIV: A mixed methods study"
+output:
+  html_document:
+    toc_float: true
+---
+
+This paper is in development. Some journals have restrictive policies about pre-prints and sharing work online prior to publication, so we have decided to wait until articles are in-press to release information here.

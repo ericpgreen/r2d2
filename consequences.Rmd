@@ -1,0 +1,8 @@
+---
+title: "Pediatric HIV Disclosure and Resilience: A prospective cohort study in Zimbabwe"
+output:
+  html_document:
+    toc_float: true
+---
+
+This paper is in development. Some journals have restrictive policies about pre-prints and sharing work online prior to publication, so we have decided to wait until articles are in-press to release information here.
