@@ -1,2 +1,1 @@
-# r2d2
-Repository for NICHD-funded study on readiness to disclose pediatric HIV status to children
+In 2013, our team of researchers from Duke University, George Mason University, REPSSI, BHASO, and the University of Zimbabwe began a study funded by the Eunice Kennedy Shriver National Institute of Child Health and Human Development (5R21HD076695-03) to develop a tool that counselors could use to assess and monitor a caregiver’s readiness and self-efficacy to disclose a child's serostatus to the child. We created this repository and [website](https://ericpgreen.github.io/r2d2/index.html) to store all study-related products and data. New material will be released as academic manuscripts enter production.
