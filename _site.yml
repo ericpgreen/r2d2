@@ -10,6 +10,8 @@ navbar:
     href: team.html
   - text: Methods
     href: methods.html
+  - text: Data and Code
+    href: data.html
   - text: Papers
     menu: 
     - text: Prevalence and Process

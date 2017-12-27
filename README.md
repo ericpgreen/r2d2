@@ -1,1 +1,5 @@
 In 2013, our team of researchers from Duke University, George Mason University, REPSSI, BHASO, and the University of Zimbabwe began a study funded by the Eunice Kennedy Shriver National Institute of Child Health and Human Development (5R21HD076695-03) to develop a tool that counselors could use to assess and monitor a caregiver’s readiness and self-efficacy to disclose a child's serostatus to the child. We created this repository and [website](https://ericpgreen.github.io/r2d2/index.html) to store all study-related products and data. New material will be released as academic manuscripts enter production.
+
+All contents of this repository and website are licensed under the [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Each published paper has its own citation. To cite the data, please use:
+
+Green, E.P., Finnegan, A., Schenk, K., Langhaug, L., & Puffer, E. (2017). R2D2 data repository. [![DOI](https://zenodo.org/badge/115128290.svg)](https://zenodo.org/badge/latestdoi/115128290)
