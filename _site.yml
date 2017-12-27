@@ -16,6 +16,9 @@ navbar:
     href: consequences.html
   - text: R2D2 Instrument
     href: instrument.html
+  - text: Estimates of Disclosure
+    href: "http://www.shinyapps.io/"
+    icon: fa-external-link
   right:
   - icon: fa-envelope-o
     href: "mailto:eric.green@duke.edu"
