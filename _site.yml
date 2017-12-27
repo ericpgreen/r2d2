@@ -12,6 +12,15 @@ navbar:
     href: methods.html
   - text: Prevalence and Process
     href: prevalence.html
+  - text: Consequences
+    href: consequences.html
+  - text: R2D2 Instrument
+    href: instrument.html
+  right:
+  - icon: fa-envelope-o
+    href: "mailto:eric.green@duke.edu"
+  - icon: fa-github
+    href: "https://github.com/ericpgreen/r2d2"
 output:
   html_document:
     theme: yeti
