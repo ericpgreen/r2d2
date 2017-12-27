@@ -4,6 +4,8 @@ output:
   html_document:
     toc_float: true
     fig_caption: true
+bibliography: r2d2.bib
+csl: vancouver.csl
 ---
 
 This study had two specific aims: 
@@ -32,7 +34,7 @@ We recruited a population-based sample of caregivers of HIV-positive children ag
 
 The target population for this study was primary caregivers—parents and guardians— of HIV-positive children ages 9 to 15 living in rural Zimbabwe. The accessible population was limited to the subset of these caregivers living in Bikita and Zaka districts in Masvingo Province whose HIV-positive children were receiving antiretroviral therapy (or were in pre-ART). We selected this location because study partner BHASO (Batanai HIV and AIDS Service Organisation) had established relationships with 42 of the 48 HIV care clinics in these districts and supported a wide network of community health workers called CHASAs (Community HIV & AIDS Support Agents) deemed essential for participant recruitment and retention.
 
-Masvingo Province is home to approximately 1.5 million people, 23% of whom live in Bikita and Zaka districts [10]. The demographics of Masvingo are similar to the rural clusters in the 2015 Zimbabwe Demographic and Health Survey (DHS) [11], suggesting that the accessible population from which we sampled may be representative of the target population of rural caregivers.
+Masvingo Province is home to approximately 1.5 million people, 23% of whom live in Bikita and Zaka districts [10]. The demographics of Masvingo are similar to the rural clusters in the 2015 Zimbabwe Demographic and Health Survey (DHS) [@zdhs:2015], suggesting that the accessible population from which we sampled may be representative of the target population of rural caregivers.
 
 Zimbabwe continues to experience a generalized HIV/AIDS epidemic with an HIV prevalence rate of 13.5% among adults of reproductive age in 2016 (down from a peak of 27.7% in 1997); the adult HIV prevalence rate in Masvingo is estimated to be slightly lower at 12.9% [11]. In 2015, the prevalence of HIV among children aged 0 to 14 years was 1.8% nationally and 1.5% in Masvingo [11].
 
@@ -73,3 +75,5 @@ During first two survey waves, we realized that caregivers were keen to tell the
 ### Caregiver-Reported Worries about Disclosure
 
 We created a series of 15 items to assess caregivers’ worries about disclosing the child’s status to the child. For instance, “I worry that telling [him/her] will make [him/her] too sad.” Caregivers responded to each item on a 4-point scale from (0) ‘not at all worried’, (1) ‘not very worried’, (2) ‘somewhat worried’, or (3) ‘very worried’.
+
+# References
