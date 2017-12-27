@@ -13,7 +13,7 @@ navbar:
   - text: Data and Code
     href: data.html
   - text: Papers
-    menu: 
+    menu:
     - text: Prevalence and Process
       href: prevalence.html
     - text: Consequences
@@ -21,12 +21,16 @@ navbar:
     - text: R2D2 Instrument
       href: instrument.html
   - text: Estimates of Disclosure
-    href: litApp.html
+    menu:
+      - text: App
+        href: litApp.html
+      - text: Details
+        href: litAppDetails.html
   right:
   - icon: fa-envelope-o
-    href: "mailto:eric.green@duke.edu"
+    href: mailto:eric.green@duke.edu
   - icon: fa-github
-    href: "https://github.com/ericpgreen/r2d2"
+    href: https://github.com/ericpgreen/r2d2
 output:
   html_document:
     theme: yeti

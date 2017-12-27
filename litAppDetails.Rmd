@@ -1,0 +1,6 @@
+---
+title: "Literature App: Supporting Details"
+output:
+  html_document:
+    toc_float: false
+---

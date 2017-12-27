@@ -24,7 +24,3 @@ tbl %>%
   kable_styling(bootstrap_options = c("striped", "hover", 
                                       "condensed", "responsive"))
 ```
-
-# Summary
-
-Insert
