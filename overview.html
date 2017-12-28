@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>Readiness to Disclose Pediatric HIV Status to Children</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,10 +19,8 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 
 
@@ -150,107 +148,6 @@ $(document).ready(function () {
 
 
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-.tocify-subheader {
-  display: inline;
-}
-.tocify-subheader .tocify-item {
-  font-size: 0.95em;
-}
-
-</style>
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
-
-
 
 
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
@@ -333,18 +230,18 @@ div.tocify {
 
 
 
+<h1 class="title toc-ignore">Readiness to Disclose Pediatric HIV Status to Children</h1>
 
 </div>
 
 
-<p>In 2013, our team of researchers from Duke University, George Mason University, REPSSI, BHASO, and the University of Zimbabwe began a study funded by the Eunice Kennedy Shriver National Institute of Child Health and Human Development (5R21HD076695-03) to develop a tool that counselors could use to assess and monitor a caregiver’s readiness and self-efficacy to disclose a child’s serostatus to the child. We created this repository and <a href="https://ericpgreen.github.io/r2d2/index.html">website</a> to store all study-related products and data. New material will be released as academic manuscripts enter production.</p>
-<p>All contents of this repository and website are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY license</a>. Each published paper has its own citation. To cite the data, please use:</p>
-<p>Green, E.P., Finnegan, A., Schenk, K., Langhaug, L., &amp; Puffer, E. (2017). R2D2 data repository. <a href="https://zenodo.org/badge/latestdoi/115128290"><img src="https://zenodo.org/badge/115128290.svg" alt="DOI" /></a></p>
+<p><em>In 2013, our team of researchers from Duke University, George Mason University, REPSSI, BHASO, and the University of Zimbabwe began a study funded by the Eunice Kennedy Shriver National Institute of Child Health and Human Development (5R21HD076695-03) to develop a tool that counselors could use to assess and monitor a caregiver’s readiness and self-efficacy to disclose a child’s serostatus to the child. We created this study website to store all study-related products and data (licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY license</a>). New material will be released as academic manuscripts enter production.</em></p>
+<hr />
+<p>An estimated 2.1 million children are living with HIV (2015), but it is unclear how many know it. Young people often test positive and begin antiretroviral therapy without learning why they are sick, the nature of their illness, or the purpose of the medication. Research suggests that children who are not told that they have a serious health condition exhibit lower adherence to treatment and poorer health outcomes than those who are aware of their status. Conversely, children who know their status exhibit higher self-esteem, fewer behavior problems, and less psychological distress. After disclosure, children may also have improved social functioning, more social support, more positive attitudes about their health, better health outcomes, and more hope for the future.</p>
+<p>While international guidance recommends that school-age children should be informed of their serostatus, disclosure can be complex and difficult for caregivers who often believe that their child is too young, that disclosing may cause psychological harm, or that the child and family will be exposed to stigma. Healthcare providers can be an important source of support for caregivers as they struggle with the decision to disclose and the process of disclosure; however, providers need training and tools to make sure that the support that they provide is effective in improving the ability of caregivers to disclose. While there is a small but growing body of evidence supporting disclosure interventions, tailoring the interventions for the specific needs of caregivers remains a challenge. To tailor effectively, we need to understand how ready a caregiver is to disclose and how confident they feel about disclosure in order to meet the caregiver where they are in the process.</p>
 
 
 
-</div>
-</div>
 
 </div>
 

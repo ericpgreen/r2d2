@@ -2,4 +2,4 @@ In 2013, our team of researchers from Duke University, George Mason University, 
 
 All contents of this repository and website are licensed under the [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Each published paper has its own citation. To cite the data, please use:
 
-`Green, E.P., Finnegan, A., Schenk, K., Langhaug, L., & Puffer, E. (2017). R2D2 data repository. [![DOI](https://zenodo.org/badge/115128290.svg)](https://zenodo.org/badge/latestdoi/115128290)`
+Green, E.P., Finnegan, A., Schenk, K., Langhaug, L., & Puffer, E. (2017). R2D2 data repository. [![DOI](https://zenodo.org/badge/115128290.svg)](https://zenodo.org/badge/latestdoi/115128290)
