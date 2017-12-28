@@ -22,13 +22,86 @@ The study protocol was approved by the Duke University Institutional Review Boar
 
 # Aim 1: Formative Qualitative Study
 
-Insert
+The purpose of this phase was to develop a pool of survey items that measure constructs thought to influence a caregiver's readiness to disclose a child's serostatus to the child.
 
-# Aim 2: Measure Development
+## Setting and Participants
+
+We recruited 73 health workers, 18 adult caregivers of HIV positive children, and 17 HIV positive adolescents from health clinics in Bikita District in Zimbabwe’s Masvingo Province to participate in 32 focus group discussions about disclosure between August 19, 2015 and January 23, 2016. Bikita District is located almost 400 kilometers from the capital of Harare in a rural region near the border with Mozambique best known for mining. In 2016, the adult HIV prevalence rate in Masvingo Province was estimated to be 12.9%, down from a high of 16.6% in 1998 [@unaids:2017]. Masvingo is one of the poorest provinces with more than half of the population falling in the poorest two wealth quintiles [@zdhs:2015].
+
+Health worker sessions were open to nurses, patient advocates called Community HIV & AIDS Support Agents (CHASAs), primary care counselors, and other staff who provide services to HIV positive children and their caregivers. All 23 health clinics in Bikita providing HIV-related services participated.
+
+We conducted caregiver and adolescent focus groups at 3 of the 23 health clinics in the district. To be eligible for shortlisting, clinics had to (i) be accessible by public transportation, due to constraints on study logistics; (ii) have more than 20 children younger than 18 years of age currently enrolled on antiretroviral therapy; (iii) have a CHASA available to help with participant recruitment; and (iv) offer support groups for adults living with HIV. Five clinics met these criteria, from which we selected three that represented differing levels of service: one clinic with a primary care counselor onsite, one clinic with a "star" rating from a local HIV and AIDS service organization representing exemplary care, and one with neither characteristic. These three clinics provide services to patients from three geographically distinct catchment areas in the district.
+
+We attempted to recruit caregivers representing each combination of caregiver and child disclosure status as shown in the table below. First, we created a sampling frame at each clinic by asking clinic staff to review their registers and make a list of children between the ages of 6 and 15 enrolled on ART. This list remained with the clinic and did not generate any new information about patients. We created a de-identified copy of each list and issued a new study case number. Children were stratified according to gender, age, and their caregiver's support group membership. We used a random number generator to rank the order in which eligible caregivers of these children would be invited to participate. A clinic representative known to patients then contacted the caregiver, informed him or her about the study, confirmed the child's disclosure status, and extended an invitation to participate in the appropriate group. The clinic's recruitment lists were destroyed following data collection activities. We were unable to recruit a group of caregivers who were members of an adult HIV support group and reported that they had not disclosed their child's status to the child.
+
+```{r, echo=FALSE}
+  tbl <- data.frame("Child knows serostatus"=c("Yes",
+                                               "No"),
+                    Yes=c("2",
+                         "0s"),
+                    No=c("2",
+                         "2")
+                    )
+
+tbl %>%
+  kable("html", caption = "Number of caregiver discussion groups by type") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", 
+                                      "condensed", "responsive")) %>%
+  add_header_above(c(" " = 1, 
+                     "Caregiver is member of adult HIV support group" = 2))
+```
+
+We also recruited a convenience sample of HIV positive adolescents aged 14 to 18 years from the membership of three HIV support groups that meet at one of the clinics. We conducted a separate discussion session with each group.
+
+## Procedures
+
+### Literature Review
+
+We reviewed the empirical literature on pediatric HIV status disclosure and created a list of 175 predictors, facilitators, barriers, and consequences of pediatric disclosure (typically using statistical significance as a filter). We then collapsed similar concepts into a set of 78 unique cover terms (or phrases), gave each cover term a unique identifier, and wrote each cover term (in English and Shona) and identifier on a blue index card ("literature cards"). For instance, research suggests that one facilitator of caregiver readiness to disclose a child's status to the child is the child's severe immunosuppression [@Punpanich:2014]. We created a cover term based on this finding called "child's deteriorating health condition facilitates disclosure". See the [study repository](https://github.com/ericpgreen/r2d2/tree/master/materials) for a complete list of literature cards.
+
+### Health Worker Discussion Groups
+
+We conducted 23 discussion groups with 73 health workers. The mean group size was 3.2 people (*SD*=0.7).
+
+#### Free Listing
+
+During each health worker discussion group, participants were invited to engage in a free-listing activity where they would suggest factors that facilitate or hinder disclosure. The facilitator introduced the activity by saying:
+
+> We would like you to list as many things about HIV disclosure that come to mind. Examples might include characteristics of caregivers or children that make disclosure easier or harder. Or they could include details about a family’s situation that promote or prevent disclosure. You could also list steps that caregivers must go through in deciding to disclose. These are only examples, however. We will keep prompting you to think of more ideas, and we will write down each one on a card. There are no bad ideas. We want to write down as many ideas as you have. We will probably pause from time to time to ask for clarification or to ask you to say more about a particular card. When we are done, we should have a stack of cards in front of us that reflect your ideas and experiences. Do you have any questions?
+
+The facilitator wrote down each concept on a separate white index card and periodically probed for meaning and examples. The cards generated during these sessions were referred to as the "local cards" to differentiate from the "literature cards" generated from the literature review.
+
+#### Card Sorting
+
+At the end of the free listing exercise, the facilitator spread the blue literature cards and the white local cards on the table and attempted to match each local card to 1 of the 78 literature cards. Matching sets were removed from the table, and the remaining non-matching literature cards were presented to the group for discussion. Participants were asked to indicate whether they would accept or reject each card as relevant to pediatric HIV disclosure in their context. With the exception of the first discussion group, the facilitator also presented the non-matching local cards generated in every previous session for the group's consideration. The facilitator used this activity as an opportunity to probe for additional details.
+
+#### Endorsement Scores
+
+At the conclusion of all health worker discussion groups, we constructed mean endorsement scores for each literature and local card. Literature cards with direct matches to a local card were assigned a value of "2". Literature cards that did not match a local card were either accepted ("1") or rejected ("0"). Therefore, literature card ratings could range from 0 to 3. We constructed a mean score for each literature card by summing each group's rating of the card and dividing by the number of group ratings. We took a similar approach to constructing a mean score for each local card that did not match a literature card.
+
+### Caregiver Discussion Groups
+
+We conducted 6 groups with 18 caregivers. The average group size was 3.0 people (*SD*=0.6).
+
+#### Card Sorting
+
+Caregivers completed a card sorting exercise and participated in an open-ended discussion of issues raised, but did not complete the same free listing activity. Instead, the facilitator presented each caregiver group with the subset of 30 cards selected from the larger pool of 78 literature cards and 35 non-matching local cards generated by the health worker groups. The set of 30 cards consisted of the 10 most and least endorsed literature cards and the 5 most and least endorsed non-matching local cards. Caregivers were given the following instructions:
+
+> We are going to begin with a brief activity. I'm going to spread out 30 cards with words written on them in English and Shona. Each card describes something related to telling a child about his or her diagnosis of HIV for the first time. Some of the cards describe things that can make this conversation easier, while other cards describe thing that can make this conversation harder. I would like to know which ideas are most and least important in your view. Working together as a group, I would like you to look at all the cards and put them into three piles. Please put the card here [point] if you think the idea is very important or very true, here [point] if you think the idea is somewhat important or somewhat true, and here [point] if you think the idea is not very important or not very true. There are no right or wrong answers. I will just listen as your group completes the activity. When you are done, I'll ask you a few questions to better understand your decision-making.
+
+#### Endorsement Scores
+
+Caregivers rated a subset of 30 cards as being of high, medium, or low importance. These ratings were assigned values of "2", "1", and "0", respectively. We constructed an endorsement score for each card by summing each group's rating and dividing by the number of group ratings.
+
+### Adolescent Discussion Groups
+
+We conducted 3 discussion groups with 17 adolescents ages 13 to 18. The mean group size was 5.7 people (*SD*=2.5). Participants were not asked to complete any free listing or card sorting activities, but were instead engaged in an open-ended discussion about how children learn about their status.
+
+# Aim 2: Measure Validation
 
 ## Research Design
 
-We recruited a population-based sample of caregivers of HIV-positive children ages 9 to 15 years to estimate the prevalence of pediatric HIV disclosure. After this baseline wave of data collection, we followed a prospective cohort of caregivers from the sample whose children were unaware of their HIV-positive status to understand the process of disclosure.
+We recruited a population-based sample of 372 caregivers of HIV-positive children ages 9 to 15 years living in Bikita and Zaka districts in Zimbabwe's Masvingo Province to participate in a survey about disclosure. Using data from this cross-sectional sample, we then identified a prospective cohort of 123 caregivers who said their HIV-positive child did not know his or her HIV status, and we followed this non-disclosed cohort of caregivers through two additional waves of data collection over the next 12 months. 
 
 ## Setting and Participants
 
