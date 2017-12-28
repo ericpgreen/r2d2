@@ -6,6 +6,8 @@ navbar:
   left:
   - text: Home
     href: index.html
+  - text: Overview
+    href: overview.html
   - text: Team
     href: team.html
   - text: Methods
