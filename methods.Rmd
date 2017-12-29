@@ -38,7 +38,7 @@ We attempted to recruit caregivers representing each combination of caregiver an
   tbl <- data.frame("Child knows serostatus"=c("Yes",
                                                "No"),
                     Yes=c("2",
-                         "0s"),
+                         "0"),
                     No=c("2",
                          "2")
                     )

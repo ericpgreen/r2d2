@@ -3,4 +3,69 @@ title: "Literature App: Supporting Details"
 output:
   html_document:
     toc_float: false
+bibliography: r2d2.bib
+csl: vancouver.csl
 ---
+
+```{r, echo=FALSE}
+  rd0 <- function(y) sprintf("%.0f", round(y, 0))
+  dpct <- read.xlsx("data and replication files/shiny/litApp/data/disclosure_pct.xlsx", sheetName="Sheet1")
+
+  datPct <-
+  dpct %>%
+    filter(grepl("Atwiine", study)==FALSE) %>%
+    filter(grepl("Kajubi", study)==FALSE) %>%
+    mutate(estimate=ifelse(is.na(estimate), "", as.character(estimate))) %>%
+    mutate(nameRD=paste0(study, ", ", year, estimate, " (", country, ")")) %>%
+    mutate(name=paste0(study, ", ", year, " (", country, ")")) %>%
+    arrange(pctDisclosed) %>%
+    #mutate(id=seq_along(dpct$country)) %>%
+    filter(!is.na(minAge)) %>%
+    mutate(ours=ifelse(grepl("Finnegan", name), "Our Study", "not")) %>%
+    mutate(name=ifelse(grepl("Finnegan", name), "THIS STUDY (Zimbabwe)", 
+                       name)) %>%
+    mutate(nameRD=ifelse(grepl("Finnegan", nameRD), 
+                         "THIS STUDY (Zimbabwe)", nameRD)) %>%
+    mutate(psam=ifelse(!is.na(psam), 1, 0)) %>%
+    filter(!is.na(sampleSize))
+
+# create cite-keys
+  citeKeys <- 
+    datPct %>%
+    mutate(study2=paste0(gsub("&", "\\\\&", study), 
+                         " (", year, estimate, ")")) %>%
+    mutate(study=str_split(as.character(study), ",", simplify=TRUE)[,1]) %>%
+    mutate(study=str_split(as.character(study), " &", simplify=TRUE)[,1]) %>%
+    mutate(key=paste0(str_to_lower(study), ":", year)) %>%
+    mutate(key=paste0(study2, " \\citeappendix{", key, "lf", "}")) %>%
+    # mutate(key=paste0("\\citeappendix{", key, "lf", "}",
+    #                   " ",
+    #                   study2)) %>% # multibib new appendix
+    #mutate(nameRD=ifelse(reportedDerived=="D", paste0("\\textit{", nameRD, "}"), nameRD)) %>%
+    mutate(minAge=rd0(minAge),
+           maxAge=rd0(maxAge)) %>%
+    mutate(minAge=ifelse(minAge==0, "<1", minAge)) %>%
+    mutate(sampleSize=rd0(sampleSize)) %>%
+    mutate(reportedDerived=ifelse(reportedDerived=="R", "reported",
+                                  ifelse(reportedDerived=="D", 
+                                         "derived", "WTF"))) %>%
+    #mutate(pctDisclosed=rd1(pctDisclosed)) %>%
+    mutate(key=ifelse(grepl("finnegan", key), "THIS STUDY", key)) %>%
+    arrange(., desc(pctDisclosed)) %>%
+    select(key, nameRD, country, minAge, maxAge, pctDisclosed, 
+           sampleSize, reportedDerived) 
+```
+
+To create this Shiny app, we identified several systematic reviews of pediatric HIV disclosure studies [@krauss:2016, @vreeman:2013, @pinzon:2013, @nichols:2017, @wiener:2007, @britto:2016, @aderomilehin:2016], conducted a supplemental search of the peer reviewed literature, and extracted `r length(datPct$study[datPct$reportedDerived=="R"])` reported estimates of pediatric HIV disclosure prevalence from the collection of reviews and single studies. When possible, we also derived estimates of HIV disclosure for specific age groups using information reported in the articles (`r length(datPct$study[datPct$reportedDerived=="D"])` additional estimates).
+
+```{r, echo=FALSE}
+# lit table ===================================================================
+  citeKeys %>%
+    select(-nameRD) %>%
+    kable("html", 
+          caption = "Reported and derived rates of pediatric HIV disclosure") %>%
+    kable_styling(bootstrap_options = c("striped", "hover", 
+                                      "condensed", "responsive"))
+```
+
+# References
