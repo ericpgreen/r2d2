@@ -25,7 +25,7 @@ navbar:
   - text: Estimates of Disclosure
     menu:
       - text: App
-        href: litApp.html
+        href: http://share.globalhealthresearch.co/disclosure-app/
       - text: Details
         href: litAppDetails.html
   right:
