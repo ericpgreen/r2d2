@@ -1,0 +1,12 @@
+name: litapp
+title: litApp
+username: epg4
+account: epg4
+server: share.globalhealthresearch.co
+hostUrl: http://share.globalhealthresearch.co/__api__
+appId: 18
+bundleId: 96
+url: http://share.globalhealthresearch.co/content/18/
+when: 1518640959.95696
+asMultiple: FALSE
+asStatic: FALSE

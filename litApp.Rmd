@@ -4,4 +4,4 @@ output:
     toc_float: false
 ---
 
-<iframe src="https://globalhealthresearch.shinyapps.io/litapp/" style="border: none; width: 1000px; height: 1000px;"></iframe>
+<iframe src="http://share.globalhealthresearch.co/disclosure-app/" style="border: none; width: 1000px; height: 1000px;"></iframe>
