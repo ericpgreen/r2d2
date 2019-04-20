@@ -1,0 +1,706 @@
+\documentclass[12pt,number]{article}
+
+
+<<knitr, include=FALSE>>=
+  library(knitr)
+  library(xtable)
+  opts_knit$set(root.dir=normalizePath('../../../')) # go up levels
+  options(scipen=999) # turn off scientific notation for numbers
+  opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+  nocomma <- function(x){structure(x,class="nocomma")}
+  knit_hooks$set(inline = function(x) {
+      if(is.na(as.numeric(x))) return(x)
+      if(!inherits(x,"nocomma")) return(prettyNum(x, big.mark=","))
+      if(inherits(x,"nocomma")) return(x)
+      return(x) # default
+  })
+@
+
+
+
+<<analysis, include=FALSE, cache=FALSE>>=
+# run analysis
+  source("public/reports/plos2019/panel-descriptive-plos2019.R")
+@
+
+\usepackage[headheight=0.5in, margin=3cm]{geometry}
+\usepackage[figuresright]{rotating}
+%\usepackage{float}
+%\usepackage[nomarkers, figuresonly]{endfloat}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+%\usepackage{enumerate}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{threeparttable}
+\usepackage{booktabs}
+\usepackage{dcolumn}
+\usepackage[group-separator={,}]{siunitx}
+\usepackage{url}
+\usepackage[english]{babel}
+\addto\captionsenglish{\renewcommand{\appendixname}{Appendix }}
+\usepackage{multirow}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e}
+\usepackage{caption}
+\usepackage[toc,page]{appendix}
+\usepackage{array}
+\usepackage{parskip}
+\setlength{\parindent}{1cm}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{\textit{RUNNING HEAD: HIV Disclosure}\hspace{5 mm} \thepage}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage[doublespacing]{setspace}
+\makeatletter\let\expandableinput\@@input\makeatother
+\usepackage[font=normalsize]{caption}
+\usepackage[modulo]{lineno}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\newcommand*{\h}{\hspace{5pt}}% for indentation
+\newcommand*{\hh}{\h\h}% double indentation
+\usepackage{makecell}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{titlesec}
+%\usepackage[firstpage]{draftwatermark}
+%\SetWatermarkLightness{0.5}
+%\usepackage{nopageno}
+\usepackage{longtable}%so table can span multiple pages
+%\usepackage{natbib}%where you can find citet
+\fancyhf{}
+
+
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+
+
+%\renewcommand\thefigure{A.\arabic{figure}}
+
+%\renewcommand\thetable{A.\arabic{table}}
+
+
+\renewcommand*\thetable{\Alph{section}.\arabic{table}}
+\renewcommand*\thefigure{\Alph{section}.\arabic{figure}}
+
+
+
+%\clearpage
+\pagenumbering{roman}
+
+%\appendix
+\begin{appendices}
+
+\section{Analysis of Clinic Eligibility Criteria}
+\label{clinic}
+
+
+
+We constructed a sampling frame of pediatric HIV patients receiving ART or pre-ART services at 42 of the 48 HIV care clinics in Bikita and Zaka Districts; the 6 excluded facilities were not part of the BHASO network. Once we had an initial list of patient load by clinic, we excluded an additional 21 facilities that provided HIV care to fewer than 13 patients ages 9 to 15.
+
+One concern about excluding these smaller facilities was that they were systematically different from the included facilities in terms of HIV prevalence, which might be associated with rates of disclosure. To examine this possibility, we compiled GPS coordinates of all included and excluded facilities and plotted clinics on a map of interpolated estimates of HIV prevalence among those aged 15 to 49 as measured in the 2010 Zimbabwe Demographic and Health Survey (ZDHS) \cite{larmarange:2014,unaids:2014}. 
+
+Figure \ref{framePrev} shows that there is no relationship (p < 0.22) between HIV prevalence of 15 to 49 year olds and the number of children between ages 9-15 on ART or pre-ART at all clinics in our sampling frame. The black points are clinics that were selected (clinic size is greater than or equal to 13). The grey points are excluded clinics.  Additional analysis confirms that there is no relationship between the residuals in a regression of HIV prevalence at each clinic on clinic size (results not shown).
+
+
+\begin{figure}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[angle=0,origin=c,scale=0.65]{output/figures/external-figs/framePrev.png}
+\caption{\textbf{Prevalence of HIV vs. clinic size.} Each dot represents a clinic. Black points represent included clinics, and grey points represent excluded clinics. There is no relationship between the prevalence of HIV and clinic size.}
+\label{framePrev}
+\end{figure}
+
+
+We also examined whether our estimated disclosure rates per clinic are related to estimated HIV prevalence in the area. Figure \ref{discPrev} shows that among clinics in our survey, there is no relationship (p < 0.49) between HIV prevalence and the percent of children who know their HIV status.  Additional analysis confirms that there is no relationship between the residuals in a regression of HIV prevalence at each clinic on clinic-level HIV disclosure (results not shown).
+
+
+\begin{figure}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[angle=0,origin=c,scale=0.65]{output/figures/external-figs/discPrev.png}
+\caption{\textbf{Prevalence of HIV vs. prevalence of pediatric HIV disclosure.} This figure shows the prevalence of HIV (ages 15-49) around each study clinic and the percentage of children who know their HIV status at each clinic. There is no relationship between HIV prevalence and disclosure.}
+\label{discPrev}
+\end{figure}
+
+
+Based on this exercise, we concluded that excluding clinics with fewer than 13 children on ART or pre-ART did not systematically alter our estimates of HIV disclosure.
+
+
+
+\section{Supplemental Tables and Figures}
+\label{sup}
+
+
+
+\setcounter{figure}{0} % Start again
+\setcounter{table}{0} % Start again
+
+\begin{figure}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[angle=0,origin=c,scale=0.65]{output/figures/external-figs/discClinicSize.pdf}
+\caption{\textbf{Disclosure by clinic size.} This figure shows how measured rates of disclosure vary by the size of the clinic. Clinic size is the number of children ages 9 to 15 on ART or pre-ART by clinic collected as part of the sampling frame. Rates of disclosure vary across clinics, but they do not seem to be associated with clinic population aged 9 to 15 on ART or pre-ART.}
+\label{discClinicSize}
+\end{figure}
+
+\clearpage
+
+
+
+
+\clearpage
+
+\begin{figure}[t!]
+\hspace*{-1.5cm}
+\centering
+\includegraphics[angle=0,origin=c,scale=0.4]{output/figures/baseStat.pdf}
+\caption{\textbf{Percentage of children who know facts about their HIV status by age.} Sample includes all children whose caregivers were surveyed as part of the cross-sectional survey (Wave 1).}
+\label{baseStat}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[t!]
+\hspace*{-1.5cm}
+\centering
+\includegraphics[angle=0,origin=c,scale=0.65]{output/figures/NPFDGHI.pdf}
+\caption{\textbf{What children learned about their HIV status over time.} This figure shows a stacked bar chart at baseline (Wave 1), 6 months (Wave 2), and 12 months (Wave 3) of the proportion of children in the prospective cohort who knew certain elements of their HIV status. Fully disclosed children (``Full'', indicated in green) knew that they have an illness called HIV, how they were infected, and that they can spread the virus to others. Partially disclosed children (indicated in blue) knew some but not all of these details. Children who do not know that they have an illness called HIV are labeled as ``No Disclosure'' (indicated in orange).}
+\label{NPFDGHI}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[t!]
+\hspace*{-1.5cm}
+\centering
+\includegraphics[angle=0,origin=c,scale=0.65]{output/figures/incidencePlotsByAge.pdf}
+\caption{\textbf{Rates of learning facts about HIV status among the prospective cohort disaggregated by age.} This figure shows the cumulative incidence of disclosure to children in the prospective cohort by age (under 12 years vs. 12 years and older). Each period represents 1 month from the baseline survey (Wave 1).}
+\label{incidencePlotsByAge}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[t!]
+\hspace*{-1.5cm}
+\centering
+\includegraphics[angle=0,origin=c,scale=0.65]{output/figures/discRisk.pdf}
+\caption{\textbf{Monthly disclosure rate by months since baseline.} This figure shows the proportion of children in the prospective cohort who learned their HIV status each month since the baseline (Wave 1) among non-disclosed children, i.e. the children at risk for disclosure indicated by the number above each dot.}
+\label{discRisk}
+\end{figure}
+
+\clearpage
+
+% caregiver type
+\begin{table}[t!]
+%\rotatebox[origin=c]{90}{
+\scalebox{1}{
+  \begin{threeparttable}
+  \caption{Caregiver relationship to child in sample}
+  \label{tbl:cgtype}
+  \centering
+  \begin{tabular}{lll}
+  \toprule
+  Caregiver relationship to child & N & \% \\
+   \midrule
+   \expandableinput output/tables/tbl-cgtype.tex
+  \bottomrule
+  \end{tabular}
+  \begin{tablenotes}
+  \small
+  \item Note. Information for all caregivers surveyed at Wave 1 (\textit{N}=372).
+  \end{tablenotes}
+  \end{threeparttable}
+}%}
+\end{table}
+
+
+\clearpage
+
+% status over time
+\begin{table}[t!]
+
+\scalebox{0.6}{
+  \begin{threeparttable}
+  \caption{Disclosure status by wave}
+  \label{tbl:status}
+  \centering
+  \begin{tabular}{lrrrrrr}
+  \toprule
+  
+      & \multicolumn{2}{c}{Cross-Sectional Sample} & \multicolumn{4}{c}{Prospective Cohort (N=123)}  \\
+      \cmidrule(lr){2-3} \cmidrule(lr){4-7}
+  & \multicolumn{2}{c}{Wave 1 (Baseline)} & \multicolumn{2}{c}{Wave 2 (6 Months)} & \multicolumn{2}{c}{Wave 3 (12 Months)}  \\
+    & \multicolumn{2}{c}{N=372} & \multicolumn{2}{c}{N=112} & \multicolumn{2}{c}{N=117}  \\
+
+  \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+      Child knows & \% & (95\% CI) & \% & (95\% CI) & \% & (95\% CI) \\
+
+   \midrule
+   \expandableinput output/tables/tbl-status.tex
+   \midrule
+   \expandableinput output/tables/tbl-statusPNF.tex
+  \bottomrule
+  \end{tabular}
+  \begin{tablenotes}
+  \small
+%  \item Note. 
+  \end{tablenotes}
+  \end{threeparttable}
+}
+\end{table}
+
+\clearpage
+
+% worries
+\begin{table}[t!]
+%\rotatebox[origin=c]{90}{
+\scalebox{1}{
+  \begin{threeparttable}
+  \caption{Worries about disclosure among non-disclosed caregivers at 12 months (N=49)}
+  \label{tbl:worries}
+  \centering
+  \begin{tabular}{ll}
+  \toprule
+  Caregiver was somewhat or very worried that telling the child will: & (\%) \\
+   \midrule
+   \expandableinput output/tables/tbl-worries.tex
+  \bottomrule
+  \end{tabular}
+  \begin{tablenotes}
+  \small
+  \item Note. Caregivers responded to each item on a 4-point scale as follows: (0) "not at all worried", (1) "not very worried", (2) "somewhat worried", and (3) "very worried." Percentages in the table represent those who responded that they were somewhat or very worried.
+  \end{tablenotes}
+  \end{threeparttable}
+}%}
+\end{table}
+
+\clearpage
+
+\section{Assessment of Disclosure Rates from the Literature}
+\label{litFigAppendix}
+
+\setcounter{figure}{0} % Start again
+\setcounter{table}{0} % Start again
+
+
+
+To place our results in context, we identified several systematic reviews of pediatric HIV disclosure studies \cite{krauss:2016,vreeman:2013,pinzon:2013,nichols:2017,wiener:2007,britto:2016,aderomilehin:2016}, conducted a supplemental search of the peer reviewed literature, and extracted 51 reported estimates of pediatric HIV disclosure prevalence from the collection of reviews and single studies. When possible, we also derived estimates of HIV disclosure for specific age groups using information reported in the articles (21 additional estimates). 
+
+We plot all reported and derived estimates in Figure \ref{litFigRD}. A black dot indicates that a study used probability sampling, and an unfilled grey circle indicates that the estimate was based on a convenience sample. Table \ref{tbl:lit} displays the reported and derived estimates from each included study. 
+
+All of the studies in this collection -- 52   in total with our study included -- defined disclosure as the child knowing they have a virus/illness called HIV. Only 2/52    studies calculated the sample prevalence of disclosure based on child-report \cite{turissini:2013,vreeman:2014-2}. The rest relied on caregiver-report (43  studies), medical records (3  studies), or did not specify the source (4  studies). 
+
+1 of the 2 studies that interviewed children to determine disclosure status, Turissini, et al. (2013), documented both caregiver-reported (27 of 270; 10.2\%) and child-reported (20 of 266; 7.5\%) values. The difference in disclosure prevalence between informants is negligible -- 2.7 percentage points. We used the caregiver-reported value in Figure 4 and Figure \ref{litFigRD}.  
+
+
+\begin{figure}[!H]
+\hspace*{-1.5cm}
+\centering
+\includegraphics[angle=0,origin=c,scale=0.9]{output/figures/litFigRD.pdf}
+\caption{\textbf{Disclosure of HIV status of children across studies.} This figure displays the rates of pediatric HIV disclosure (i.e. the child knows that the name of the illness they have is HIV) reported in 52 studies (including our study) plus derived estimates, the location and sample size of each study, whether the study used probability sampling methods (black filled dots), and the age range of the children. We compiled the data for this figure from recent systematic reviews \cite{krauss:2016, vreeman:2013, pinzon:2013, nichols:2017, wiener:2007, britto:2016, aderomilehin:2016} and our own supplemental search of the literature. Reported estimates either have the letter "a" or no letter appended to the study year; derived estimates have a letter other than "a" appended to the study year.}
+\label{litFigRD}
+\end{figure}
+
+% litTable
+
+\begin{table}[t!]
+\scalebox{0.5}{
+  \begin{threeparttable}
+  \caption{Studies included in literature figure}
+  \label{tbl:lit}
+  \centering
+  \begin{tabular}{llrrrrr}
+  \toprule
+      & & \multicolumn{2}{c}{Child's Age Range} & &  \\
+  \cmidrule(lr){3-4}
+  Study & Country & Min & Max & Disclosed (\%) & Sample Size & Source \\
+   \midrule
+   \expandableinput output/tables/tbl-lit.tex
+  \bottomrule
+  \end{tabular}
+  \begin{tablenotes}
+  \small
+  \item Note. This table shows estimates of pediatric HIV disclosure (i.e. the child knows that the name of the illness they have is HIV) from published systematic reviews (reported) and estimates derived from these studies not published in the systematic reviews (derived). Derived estimates were calculated directly from each published study if the study reported disclosure rates among subsets of their study population.
+  \end{tablenotes}
+  \end{threeparttable}
+}
+\end{table}
+%% References
+
+\clearpage
+
+%\nociteappendix{*}
+\bibliographystyle{elsarticle-num}
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{larmarange:2014}
+J.~Larmarange, V.~Bendaud, Hiv estimates at second subnational level from
+  national population-based surveys, AIDS 28~(Suppl 4) (2014) S469--S476.
+
+\bibitem{unaids:2014}
+UNAIDS, Zimbabwe developing subnational estimates of {HIV} prevalence and the
+  number of people living with {HIV} (2014).
+
+\bibitem{krauss:2016}
+B.~J. Krauss, S.~Letteney, C.~N. Okoro, Why tell children: A synthesis of the
+  global literature on reasons for disclosing or not disclosing an {HIV}
+  diagnosis to children 12 and under, Front Public Health 4.
+
+\bibitem{vreeman:2013}
+R.~C. Vreeman, A.~M. Gramelspacher, P.~O. Gisore, M.~L. Scanlon, W.~M.
+  Nyandiko, Disclosure of {HIV} status to children in resource-limited
+  settings: a systematic review, Journal of the International AIDS Society
+  16~(1).
+
+\bibitem{pinzon:2013}
+M.~C. Pinz{\'o}n-Iregui, C.~M. Beck-Sagu{\'e}, R.~M. Malow, Disclosure of their
+  {HIV} status to infected children: A review of the literature, J Trop Pediatr
+  59~(2) (2013) 84--89.
+
+\bibitem{nichols:2017}
+J.~Nichols, A.~Steinmetz, P.~Elijah, Impact of {HIV-status} disclosure on
+  adherence to antiretroviral therapy among {HIV-infected} children in
+  resource-limited aettings: A systematic review, AIDS Behav 21~(1) (2017)
+  1--11.
+\newblock \href {http://dx.doi.org/10.1007/s10461-016-1481-z}
+  {\path{doi:10.1007/s10461-016-1481-z}}.
+
+\bibitem{wiener:2007}
+L.~Wiener, C.~A. Mellins, S.~Marhefka, H.~B. Battles, Disclosure of an {HIV}
+  diagnosis to children: history, current research, and future directions,
+  Journal of Developmental \& Behavioral Pediatrics 28~(2) (2007) 155--166.
+
+\bibitem{britto:2016}
+C.~Britto, K.~Mehta, R.~Thomas, A.~Shet, Prevalence and correlates of {HIV}
+  disclosure among children and adolescents in low- and middle-income
+  countries: A systematic review, J Dev Behav Pediatr 37~(6) (2016) 496--505.
+
+\bibitem{aderomilehin:2016}
+O.~Aderomilehin, A.~Hanciles-Amu, O.~O. Ozoya, Perspectives and practice of
+  {HIV} disclosure to children and adolescents by health-care providers and
+  caregivers in sub-saharan africa: A systematic review, Front Public Health
+  4~(166).
+
+\bibitem{turissini:2013}
+M.~L. Turissini, W.~M. Nyandiko, S.~O. Ayaya, I.~Marete, A.~Mwangi, V.~Chemboi,
+  L.~Warui, R.~C. Vreeman, The prevalence of disclosure of {HIV} status to
+  {HIV}-infected children in {Western Kenya}, Journal of the Pediatric
+  Infectious Diseases Society 2~(2) (2013) 136--143.
+\newblock \href {http://dx.doi.org/10.1093/jpids/pit024}
+  {\path{doi:10.1093/jpids/pit024}}.
+
+\bibitem{vreeman:2014-2}
+R.~C. Vreeman, M.~L. Scanlon, A.~Mwangi, M.~Turissini, S.~O. Ayaya, C.~Tenge,
+  W.~M. Nyandiko, A {Cross}-{Sectional} {Study} of {Disclosure} of {HIV}
+  {Status} to {Children} and {Adolescents} in {Western} {Kenya}, PLoS ONE 9~(1)
+  (2014) e86616.
+\newblock \href {http://dx.doi.org/10.1371/journal.pone.0086616}
+  {\path{doi:10.1371/journal.pone.0086616}}.
+
+\bibitem{flanagan-klygis:2001}
+E.~Flanagan-Klygis, L.~Friedman~Ross, J.~Lantos, J.~Frader, R.~Yogev,
+  Disclosing the diagnosis of {HIV} in pediatrics, The Journal of Clinical
+  Ethics 12~(2) (2001) 150--157.
+
+\bibitem{santamaria:2011}
+E.~Santamaria, Karina, C.~Dolezal, S.~Marhefka, L., S.~Hoffman, Y.~Ahmed,
+  K.~Elkington, C.~Mellins, A., Psychosocial {Implications} of {HIV}
+  {Serostatus} {Disclosure} to {Youth} with {Perinatally} {Acquired} {HIV},
+  AIDS Patient Care \& STDs 25~(4) (2011) 257--264.
+
+\bibitem{cluver:2015}
+L.~D. Cluver, R.~J. Hodes, E.~Toska, K.~K. Kidia, F.~M. Orkin, L.~Sherr,
+  F.~Meinck, `{HIV} is like a tsotsi. {ARVs} are your guns': associations
+  between {HIV}-disclosure and adherence to antiretroviral treatment among
+  adolescents in {South} {Africa}, AIDS 29 (2015) S57--S65.
+
+\bibitem{mahloko:2012}
+J.~M. Mahloko, S.~Madiba, Disclosing {HIV} diagnosis to children in {Odi}
+  district, {South} {Africa} : reasons for disclosure and non-disclosure, Afr J
+  Prm Health Care Fam Med 4~(1).
+
+\bibitem{sirikum:2014}
+C.~Sirikum, J.~Sophonphan, T.~Chuanjaroen, S.~Lakonphon, A.~Srimuan, P.~Chusut,
+  T.~C. Do, W.~Prasitsuebsai, T.~Puthanakit, J.~Ananworanich, T.~Bunupuradah,
+  {on behalf of HIV-NAT 015 study team}, {HIV} disclosure and its effect on
+  treatment outcomes in perinatal {HIV}-infected {Thai} children, AIDS Care
+  26~(9) (2014) 1144--1149.
+
+\bibitem{wiener:1996}
+L.~S. Wiener, H.~B. Battles, N.~Heilman, C.~K. Sigelman, P.~A. Pizzo, Factors
+  associated with disclosure of diagnosis to children with {HIV}/{AIDS}.,
+  Pediatric AIDS and HIV infection 7~(5) (1996) 310--324.
+
+\bibitem{riekert:1999}
+K.~A. Riekert, L.~Wiener, H.~Battles, Prediction of psychological disress in
+  school-age children with {HIV}, Children's Health Care 28~(3) (1999)
+  201--220.
+
+\bibitem{ferris:2007}
+M.~Ferris, K.~Burau, A.~Schweitzer, S.~Mihale, N.~Murray, A.~Preda, M.~Ross,
+  M.~Kline, The influence of disclosure of {HIV} diagnosis on time to disease
+  progression in a cohort of {Romanian} children and teens, AIDS Care 19~(9)
+  (2007) 1088--1094.
+
+\bibitem{toska:2015}
+E.~Toska, L.~D. Cluver, R.~Hodes, K.~K. Kidia, Sex and secrecy: {How}
+  {HIV}-status disclosure affects safe sex among {HIV}-positive adolescents,
+  AIDS Care 27~(sup1) (2015) 47--58.
+\newblock \href {http://dx.doi.org/10.1080/09540121.2015.1071775}
+  {\path{doi:10.1080/09540121.2015.1071775}}.
+
+\bibitem{bachanas:2001}
+P.~j. Bachanas, K.~A. Kullgren, K.~S. Schwartz, B.~Lanier, J.~S. McDaniel,
+  J.~Smith, S.~Nesheim, Predictors of psychological adjustment in school age
+  children infected with {HIV}, Journal of Pediatric Psychology 26~(6) (2001)
+  343--352.
+
+\bibitem{instone:2000}
+S.~L. Instone, Perceptions of children with {HIV} infection when not told for
+  so long: {Implications} for diagnosis disclosure, Journal of Pediatric Health
+  Care 14~(5) (2000) 235--243.
+
+\bibitem{binagwaho:2013}
+A.~Binagwaho, I.~Murekatete, A.~Rukundo, P.~Mugwaneza, R.~Hinda, A.~Lyambabaje,
+  J.~Bizimana, C.~Wagner, G.~Muriisa, J.~Muita, V.~Mutabaxi, J.~P. Nyemazi,
+  S.~Nsanzimana, C.~Karema, Factors associated with disclosure of {HIV} status
+  among {HIV} positive children in {Rwanda}, Rwanda Medical Journal 69~(3).
+
+\bibitem{negese:2012}
+D.~Negese, K.~Addis, A.~Awoke, Z.~Birhanu, D.~Muluye, S.~Yifru, B.~Megabiaw,
+  {HIV}-{Positive} {Status} {Disclosure} and {Associated} {Factors} among
+  {Children} in {North} {Gondar}, {Northwest} {Ethiopia}, International
+  Scholarly Research Notices 2012 (2012) e485720.
+
+\bibitem{nabukeera-barungi:2007}
+N.~Nabukeera-Barungi, I.~Kalyesubula, A.~Kekitiinwa, {Byakika-Tusiime},
+  P.~Musoke, Adherence to antiretroviral therapy in children attending {Mulago}
+  {Hospital}, {Kampala}, Annals of Tropical Paediatrics 27~(2) (2007) 123--131.
+
+\bibitem{dachew:2014}
+B.~A. Dachew, T.~B. Tesfahunegn, A.~M. Birhanu, Adherence to highly active
+  antiretroviral therapy and associated factors among children at the
+  {University} of {Gondar} {Hospital} and {Gondar} {Poly} {Clinic}, {Northwest}
+  {Ethiopia}: a cross-sectional institutional based study, BMC Public Health
+  14~(875) (2014) 1--6.
+
+\bibitem{grubman:1995}
+S.~Grubman, E.~Gross, N.~Lerner-Weiss, M.~Hernandez, G.~D. McSherry, L.~G.
+  Hoyt, M.~Boland, J.~M. Oleske, Older children and adolescents living with
+  perinatally acquired human immunodeficiency virus infection, Pediatrics
+  95~(5) (1995) 657--663.
+
+\bibitem{mweemba:2015}
+M.~Mweemba, M.~M. Musheke, C.~Michelo, H.~Halwiindi, O.~Mweemba, J.~M. Zulu,
+  ``{When} am {I} going to stop taking the drug?'' {Enablers}, barriers and
+  processes of disclosure of {HIV} status by caregivers to adolescents in a
+  rural district in {Zambia}, BMC Public Health 15~(1).
+
+\bibitem{arage:2014}
+G.~Arage, G.~A. Tessema, H.~Kassa, Adherence to antiretroviral therapy and its
+  associated factors among children at {South} {Wollo} {Zone} {Hospitals},
+  {Northeast} {Ethiopia}: a cross-sectional study, BMC Public Health 14~(1)
+  (2014) 365.
+
+\bibitem{odiachi:2016}
+A.~Odiachi, D.~Abegunde, Prevalence and predictors of pediatric disclosure
+  among {HIV}-infected {Nigerian} children on treatment, AIDS Care 28~(8)
+  (2016) 1046--1051.
+\newblock \href {http://dx.doi.org/10.1080/09540121.2016.1147018}
+  {\path{doi:10.1080/09540121.2016.1147018}}.
+
+\bibitem{mumburi:2014}
+L.~P. Mumburi, B.~C. Hamel, R.~N. Philemon, G.~N. Kapanda, L.~J. Msuya, Factors
+  associated with {HIV}-status disclosure to {HIV}-infected children receiving
+  care at {Kilimanjaro} {Christian} {Medical} {Centre} in {Moshi}, {Tanzania},
+  The Pan African Medical Journal 18.
+
+\bibitem{oberdorfer:2006}
+P.~Oberdorfer, T.~Puthanakit, O.~Louthrenoo, C.~Charnsil, V.~Sirisanthana,
+  T.~Sirisanthana, Disclosure of {HIV}/{AIDS} diagnosis to {HIV}-infected
+  children in {Thailand}, Journal of Paediatrics and Child Health 42~(5) (2006)
+  283--288.
+
+\bibitem{lester:2002}
+P.~Lester, M.~Chesney, M.~Cooke, P.~Whalley, B.~Perez, A.~Petru, A.~Dorenbaum,
+  D.~Wara, Diagnostic disclosure to {HIV}-infected children: how parents decide
+  when and what to tell, Clinical child psychology and psychiatry 7~(1) (2002)
+  85--99.
+
+\bibitem{mialky:2001}
+E.~Mialky, J.~Vagnoni, R.~Rutstein, School-age children with perinatally
+  acquired {HIV} infection: medical and psychosocial issues in a {Philadelphia}
+  cohort, AIDS patient care and STDs 15~(11) (2001) 575--579.
+
+\bibitem{biressaw:2013}
+S.~Biressaw, W.~E. Abegaz, M.~Abebe, W.~A. Taye, M.~Belay, Adherence to
+  {Antiretroviral} {Therapy} and associated factors among {HIV} infected
+  children in {Ethiopia}: unannounced home-based pill count versus caregivers'
+  report, BMC pediatrics 13~(1) (2013) 132.
+
+\bibitem{cohen:1997}
+J.~Cohen, C.~Reddington, D.~Jacobs, R.~Meade, D.~Picard, K.~Singleton,
+  D.~Smith, M.~B. Caldwell, A.~DeMaria, H.-W. Hsu, {others}, School-related
+  issues among {HIV}-infected children, Pediatrics 100~(1) (1997) e8--e8.
+
+\bibitem{biadgilign:2011}
+S.~Biadgilign, A.~Deribew, A.~Amberbir, H.~R. Escudero, K.~Deribe, Factors
+  {Associated} with {HIV}/{AIDS} {Diagnostic} {Disclosure} to {HIV} {Infected}
+  {Children} {Receiving} {HAART}: {A} {Multi}-{Center} {Study} in {Addis}
+  {Ababa}, {Ethiopia}, PLoS ONE 6~(3) (2011) e17572.
+
+\bibitem{menon:2007}
+A.~Menon, C.~Glazebrook, N.~Campain, M.~Ngoma, Mental {Health} and {Disclosure}
+  of {HIV} {Status} in {Zambian} {Adolescents} {With} {HIV} {Infection}:
+  {Implications} for {Peer}-{Support} {Programs}, JAIDS Journal of Acquired
+  Immune Deficiency Syndromes 46~(3) (2007) 349--354.
+
+\bibitem{gyamfi:2015}
+E.~Gyamfi, P.~Okyere, E.~Appiah-Brempong, R.~O. Adjei, K.~A. Mensah, Benefits
+  of {Disclosure} of {HIV} {Status} to {Infected} {Children} and {Adolescents}:
+  {Perceptions} of {Caregivers} and {Health} {Care} {Providers}, Journal of the
+  Association of Nurses in AIDS Care 26~(6) (2015) 770--780.
+
+\bibitem{abebe:2012}
+W.~Abebe, S.~Teferra, Disclosure of diagnosis by parents and caregivers to
+  children infected with {HIV}: {Prevalence} associated factors and perceived
+  barriers in {Addis} {Ababa}, {Ethiopia}, AIDS Care 24~(9) (2012) 1097--1102.
+\newblock \href {http://dx.doi.org/10.1080/09540121.2012.656565}
+  {\path{doi:10.1080/09540121.2012.656565}}.
+
+\bibitem{mellins:2002}
+C.~A. Mellins, E.~Brackis-Cott, C.~Dolezal, A.~Richards, S.~W. Nicholas, E.~J.
+  Abrams, Patterns of {HIV} status disclosure to perinatally {HIV}-infected
+  children and subsequent mental health outcomes, Clinical Child Psychology and
+  Psychiatry 7~(1) (2002) 101--114.
+
+\bibitem{bikaako-kajura:2006}
+W.~Bikaako-Kajura, E.~Luyirika, D.~W. Purcell, J.~Downing, F.~Kaharuza,
+  J.~Mermin, S.~Malamba, R.~Bunnell, Disclosure of {HIV} status and adherence
+  to daily drug regimens among {HIV}-infected children in {Uganda}, AIDS and
+  Behavior 10~(S1) (2006) 85--93.
+
+\bibitem{mellins:1994}
+C.~A. Mellins, A.~A. Ehrhardt, Families affected by pediatric acquired
+  immunodeficiency syndrome: {Sources} of stress and coping, Developmental and
+  Behavioral Pediatrics 15~(3).
+
+\bibitem{polisset:2009}
+J.~Polisset, F.~Ametonou, E.~Arrive, A.~Aho, F.~Perez, Correlates of
+  {Adherence} to {Antiretroviral} {Therapy} in {HIV}-{Infected} {Children} in
+  {Lom{\'e}}, {Togo}, {West} {Africa}, AIDS and Behavior 13~(1) (2009) 23--32.
+
+\bibitem{naidoo:2015}
+G.~D. Naidoo, N.~H. McKerrow, Current practices around {HIV} disclosure to
+  children on highly active antiretroviral therapy, South African Journal of
+  Child Health 9~(3) (2015) 85.
+
+\bibitem{haberer:2011}
+J.~E. Haberer, A.~Cook, A.~S. Walker, M.~Ngambi, A.~Ferrier, V.~Mulenga,
+  C.~Kityo, M.~Thomason, D.~Kabamba, C.~Chintu, D.~M. Gibb, D.~R. Bangsberg,
+  Excellent {Adherence} to {Antiretrovirals} in {HIV}+ {Zambian} {Children}
+  {Is} {Compromised} by {Disrupted} {Routine}, {HIV} {Nondisclosure}, and
+  {Paradoxical} {Income} {Effects}, PLoS ONE 6~(4) (2011) e18505.
+
+\bibitem{vreeman:2014-1}
+R.~C. Vreeman, W.~M. Nyandiko, H.~Liu, W.~Tu, M.~L. Scanlon, J.~E. Slaven,
+  S.~O. Ayaya, T.~S. Inui, Measuring adherence to antiretroviral therapy in
+  children and adolescents in western {Kenya}, Journal of the International
+  AIDS Society 17~(1).
+
+\bibitem{hardy:1994}
+M.~S. Hardy, F.~D. Armstrong, D.~K. Routh, J.~Albrecht, J.~Davis, Coping and
+  communication among parents and children with human immunodeficiency virus
+  and cancer, Developmental and Behavioral Pediatrics 15~(3).
+
+\bibitem{kallem:2011}
+S.~Kallem, L.~Renner, M.~Ghebremichael, E.~Paintsil, Prevalence and {Pattern}
+  of {Disclosure} of {HIV} {Status} in {HIV}-{Infected} {Children} in {Ghana},
+  AIDS and Behavior 15~(6) (2011) 1121--7.
+
+\bibitem{fetzer:2011}
+B.~C. Fetzer, B.~Mupenda, J.~Lusiama, F.~Kitetele, C.~Golin, F.~Behets,
+  Barriers to and facilitators of adherence to pediatric antiretroviral therapy
+  in a sub-{Saharan} setting: insights from a qualitative study, AIDS patient
+  care and STDs 25~(10) (2011) 611--621.
+
+\bibitem{boon-yasidhi:2005}
+V.~Boon-Yasidhi, U.~Kottapat, Y.~Durier, N.~Plipat, W.~Phongsamart,
+  K.~Chokephaibulkit, N.~Vanprapar, Diagnosis disclosure in {HIV}-infected
+  {Thai} children, J Med Assoc Thai 88~(Suppl 8) (2005) S100--5.
+
+\bibitem{thorne:2000}
+C.~Thorne, M.-L. Newell, C.~Pckham, Disclosure of diagnosis and planning for
+  the future in {HIV}-affected families in {Europe}, Child: Care, Health and
+  Development 26~(1) (2000) 29--40.
+
+\bibitem{funck-brentano:1997}
+{Funck-Brentano I}, {Costagliola D}, {Seibel N}, {Straub E}, {Tardieu M},
+  {Blanche S}, Patterns of disclosure and perceptions of the human
+  immunodeficiency virus in infected elementary school---age children, Archives
+  of Pediatrics \& Adolescent Medicine 151~(10) (1997) 978--985.
+
+\bibitem{john-stewart:2013}
+G.~John-Stewart, C., G.~Wariua, K.~Beima-Sofie, M., B.~Richardson, A.,
+  C.~Farquhar, E.~Maleche-Obimbo, D.~Mbori-Ngacha, D.~Wamalwa, Prevalence,
+  perceptions, and correlates of pediatric {HIV} disclosure in an {HIV}
+  treatment program in {Kenya}, AIDS Care 25~(9) (2013) 1067--1076.
+
+\bibitem{brown:2011}
+B.~Brown, J., R.~Oladokun, E., K.~Osinusi, S.~Ochigbo, I.~Adewole, F.,
+  P.~Kanki, Disclosure of {HIV} status to infected children in a {Nigerian}
+  {HIV} {Care} {Programme}, AIDS Care 23~(9) (2011) 1053--1058.
+
+\bibitem{ugwu:2013}
+R.~Ugwu, A.~Eneh, Factors influencing adherence to paediatric antiretroviral
+  therapy in {Portharcourt}, {South}- {South} {Nigeria}, Pan African Medical
+  Journal 16.
+
+\bibitem{waugh:2003}
+S.~Waugh, Parental views on disclosure of diagnosis to their {HIV}-positive
+  children, AIDS Care 15~(2) (2003) 169--176.
+
+\bibitem{moodley:2006}
+K.~Moodley, L.~Myer, D.~Michaels, M.~Cotton, Paediatric {HIV} disclosure in
+  {South} {Africa}-caregivers' perspectives on discussing {HIV} with infected
+  children, South African Medical Journal 96~(3) (2006) 201--204.
+
+\bibitem{vaz:2011}
+L.~M.~E. Vaz, S.~Maman, E.~Eng, O.~A. Barbarin, T.~Tshikandu, F.~Behets,
+  Patterns of {Disclosure} of {HIV}- {Status} to {Infected} {Children} in a
+  {Sub}-{Saharan} {African} {Setting}, Journal of developmental and behavioral
+  pediatrics : JDBP 32~(4) (2011) 307--315.
+
+\bibitem{vreeman:2010}
+R.~C. Vreeman, W.~M. Nyandiko, S.~O. Ayaya, E.~G. Walumbe, D.~G. Marrero, T.~S.
+  Inui, The {Perceived} {Impact} of {Disclosure} of {Pediatric} {HIV} {Status}
+  on {Pediatric} {Antiretroviral} {Therapy} {Adherence}, {Child}
+  {Well}-{Being}, and {Social} {Relationships} in a {Resource}-{Limited}
+  {Setting}, AIDS Patient Care and STDs 24~(10) (2010) 639--649.
+
+\end{thebibliography}
+
+
+
+\end{appendices}
+\end{document}
