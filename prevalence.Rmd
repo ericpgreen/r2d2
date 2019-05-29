@@ -5,20 +5,14 @@ output:
     toc_float: true
 ---
 
-*This paper is under review. Some journals have restrictive policies about pre-prints and sharing work online prior to publication, so we have decided to wait until articles are in-press to release information here.*
-
-* * * 
-
 # Metadata
 
 ```{r, echo=FALSE}
   tbl <- data.frame(Element=c("Paper Citation", 
                               "Journal Copy", 
-                              "Pre-Print", 
                               "Data Citation"),
-                    Details=c("Finnegan, A., Langhaug, L., Schenk, K., Rusakaniko, S., Puffer, E., Choi, Y., Mahaso, S., & Green, E.P. (under review). The prevalence and process of pediatric HIV disclosure: A population-based prospective cohort study in Zimbabwe.",
-                              "Under review",
-                              "Under review",
+                    Details=c("Finnegan, A., Langhaug, L., Schenk, K., Rusakaniko, S., Puffer, E., Choi, Y., Mahaso, S., & Green, E.P. (2019). The prevalence and process of pediatric HIV disclosure: A population-based prospective cohort study in Zimbabwe. *PLOS ONE*, 14(5): e0215659. https://doi.org/10.1371/journal.pone.0215659",
+                              "[Open access](https://doi.org/10.1371/journal.pone.0215659)",
                               "Green, E.P., Finnegan, A., Schenk, K., Langhaug, L., & Puffer, E. (2017). R2D2 data repository. [![DOI](https://zenodo.org/badge/115128290.svg)](https://zenodo.org/badge/latestdoi/115128290)"))
 
 tbl %>%

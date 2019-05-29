@@ -23,7 +23,9 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 
@@ -55,11 +57,9 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -78,8 +78,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -95,7 +101,6 @@ body {
   padding-top: 50px;
   margin-top: -50px;
 }
-
 .section h2 {
   padding-top: 50px;
   margin-top: -50px;
@@ -115,6 +120,43 @@ body {
 .section h6 {
   padding-top: 50px;
   margin-top: -50px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -136,18 +178,75 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -225,8 +324,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -235,6 +332,16 @@ div.tocify {
 
 
 </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -342,12 +449,12 @@ div.tocify {
 <p>Working in Zimbabwe’s Masvingo Province, we conducted formative qualitative research to understand the factors underlying caregivers’ readiness and self-efficacy to disclose, how and why this changes over time, how child characteristics including developmental level and health status impact a caregiver’s approach to disclosure, the positive and negative consequences of disclosing experienced by caregivers and children, and the types of support that caregivers and their families are seeking during the process of disclosure and beyond.</p>
 <p>We used the qualitative findings to develop a broad survey instrument to assess a caregiver’s readiness and self-efficacy to disclose and potential barriers and facilitators to disclosure, such as their perceptions of the child’s readiness, the health status of the child or of themselves, fear of stigma, or qualities of the caregiver-child relationship. We recruited a cross-sectional sample of caregivers of HIV-positive children, administered the survey, and followed the cohort of non-disclosed caregivers for 12-months. We used the results to develop a measure of caregiver readiness to disclose.</p>
 <p>The study protocol was approved by the Duke University Institutional Review Board, the Joint Parirenyatwa Hospital and College of Health Sciences Research Committee, the Medical Research Council of Zimbabwe, and the George Mason University Institutional Review Board. All study participants provided written informed consent.</p>
-<section id="aim-1-formative-qualitative-study" class="level1">
+<div id="aim-1-formative-qualitative-study" class="section level1">
 <h1>Aim 1: Formative Qualitative Study</h1>
 <p>The purpose of this phase was to develop a pool of survey items that measure constructs thought to influence a caregiver’s readiness to disclose a child’s serostatus to the child.</p>
-<section id="setting-and-participants" class="level2">
+<div id="setting-and-participants" class="section level2">
 <h2>Setting and Participants</h2>
-<p>We recruited 73 health workers, 18 adult caregivers of HIV positive children, and 17 HIV positive adolescents from health clinics in Bikita District in Zimbabwe’s Masvingo Province to participate in 32 focus group discussions about disclosure between August 19, 2015 and January 23, 2016. Bikita District is located almost 400 kilometers from the capital of Harare in a rural region near the border with Mozambique best known for mining. In 2016, the adult HIV prevalence rate in Masvingo Province was estimated to be 12.9%, down from a high of 16.6% in 1998 <span class="citation" data-cites="unaids:2017">[1]</span>. Masvingo is one of the poorest provinces with more than half of the population falling in the poorest two wealth quintiles <span class="citation" data-cites="zdhs:2015">[2]</span>.</p>
+<p>We recruited 73 health workers, 18 adult caregivers of HIV positive children, and 17 HIV positive adolescents from health clinics in Bikita District in Zimbabwe’s Masvingo Province to participate in 32 focus group discussions about disclosure between August 19, 2015 and January 23, 2016. Bikita District is located almost 400 kilometers from the capital of Harare in a rural region near the border with Mozambique best known for mining. In 2016, the adult HIV prevalence rate in Masvingo Province was estimated to be 12.9%, down from a high of 16.6% in 1998 <span class="citation">[1]</span>. Masvingo is one of the poorest provinces with more than half of the population falling in the poorest two wealth quintiles <span class="citation">[2]</span>.</p>
 <p>Health worker sessions were open to nurses, patient advocates called Community HIV &amp; AIDS Support Agents (CHASAs), primary care counselors, and other staff who provide services to HIV positive children and their caregivers. All 23 health clinics in Bikita providing HIV-related services participated.</p>
 <p>We conducted caregiver and adolescent focus groups at 3 of the 23 health clinics in the district. To be eligible for shortlisting, clinics had to (i) be accessible by public transportation, due to constraints on study logistics; (ii) have more than 20 children younger than 18 years of age currently enrolled on antiretroviral therapy; (iii) have a CHASA available to help with participant recruitment; and (iv) offer support groups for adults living with HIV. Five clinics met these criteria, from which we selected three that represented differing levels of service: one clinic with a primary care counselor onsite, one clinic with a “star” rating from a local HIV and AIDS service organization representing exemplary care, and one with neither characteristic. These three clinics provide services to patients from three geographically distinct catchment areas in the district.</p>
 <p>We attempted to recruit caregivers representing each combination of caregiver and child disclosure status as shown in the table below. First, we created a sampling frame at each clinic by asking clinic staff to review their registers and make a list of children between the ages of 6 and 15 enrolled on ART. This list remained with the clinic and did not generate any new information about patients. We created a de-identified copy of each list and issued a new study case number. Children were stratified according to gender, age, and their caregiver’s support group membership. We used a random number generator to rank the order in which eligible caregivers of these children would be invited to participate. A clinic representative known to patients then contacted the caregiver, informed him or her about the study, confirmed the child’s disclosure status, and extended an invitation to participate in the appropriate group. The clinic’s recruitment lists were destroyed following data collection activities. We were unable to recruit a group of caregivers who were members of an adult HIV support group and reported that they had not disclosed their child’s status to the child.</p>
@@ -359,8 +466,8 @@ Number of caregiver discussion groups by type
 <tr>
 <th style="border-bottom:hidden" colspan="1">
 </th>
-<th style="text-align:center; border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;" colspan="2">
-<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
 Caregiver is member of adult HIV support group
 </div>
 </th>
@@ -403,71 +510,71 @@ No
 </tbody>
 </table>
 <p>We also recruited a convenience sample of HIV positive adolescents aged 14 to 18 years from the membership of three HIV support groups that meet at one of the clinics. We conducted a separate discussion session with each group.</p>
-</section>
-<section id="procedures" class="level2">
+</div>
+<div id="procedures" class="section level2">
 <h2>Procedures</h2>
-<section id="literature-review" class="level3">
+<div id="literature-review" class="section level3">
 <h3>Literature Review</h3>
-<p>We reviewed the empirical literature on pediatric HIV status disclosure and created a list of 175 predictors, facilitators, barriers, and consequences of pediatric disclosure (typically using statistical significance as a filter). We then collapsed similar concepts into a set of 78 unique cover terms (or phrases), gave each cover term a unique identifier, and wrote each cover term (in English and Shona) and identifier on a blue index card (“literature cards”). For instance, research suggests that one facilitator of caregiver readiness to disclose a child’s status to the child is the child’s severe immunosuppression <span class="citation" data-cites="Punpanich:2014">[<span class="citeproc-not-found" data-reference-id="Punpanich:2014"><strong>???</strong></span>]</span>. We created a cover term based on this finding called “child’s deteriorating health condition facilitates disclosure”. See the <a href="https://github.com/ericpgreen/r2d2/tree/master/materials">study repository</a> for a complete list of literature cards.</p>
-</section>
-<section id="health-worker-discussion-groups" class="level3">
+<p>We reviewed the empirical literature on pediatric HIV status disclosure and created a list of 175 predictors, facilitators, barriers, and consequences of pediatric disclosure (typically using statistical significance as a filter). We then collapsed similar concepts into a set of 78 unique cover terms (or phrases), gave each cover term a unique identifier, and wrote each cover term (in English and Shona) and identifier on a blue index card (“literature cards”). For instance, research suggests that one facilitator of caregiver readiness to disclose a child’s status to the child is the child’s severe immunosuppression <span class="citation">[<span class="citeproc-not-found" data-reference-id="Punpanich:2014"><strong>???</strong></span>]</span>. We created a cover term based on this finding called “child’s deteriorating health condition facilitates disclosure”. See the <a href="https://github.com/ericpgreen/r2d2/tree/master/materials">study repository</a> for a complete list of literature cards.</p>
+</div>
+<div id="health-worker-discussion-groups" class="section level3">
 <h3>Health Worker Discussion Groups</h3>
 <p>We conducted 23 discussion groups with 73 health workers. The mean group size was 3.2 people (<em>SD</em>=0.7).</p>
-<section id="free-listing" class="level4">
+<div id="free-listing" class="section level4">
 <h4>Free Listing</h4>
 <p>During each health worker discussion group, participants were invited to engage in a free-listing activity where they would suggest factors that facilitate or hinder disclosure. The facilitator introduced the activity by saying:</p>
 <blockquote>
 <p>We would like you to list as many things about HIV disclosure that come to mind. Examples might include characteristics of caregivers or children that make disclosure easier or harder. Or they could include details about a family’s situation that promote or prevent disclosure. You could also list steps that caregivers must go through in deciding to disclose. These are only examples, however. We will keep prompting you to think of more ideas, and we will write down each one on a card. There are no bad ideas. We want to write down as many ideas as you have. We will probably pause from time to time to ask for clarification or to ask you to say more about a particular card. When we are done, we should have a stack of cards in front of us that reflect your ideas and experiences. Do you have any questions?</p>
 </blockquote>
 <p>The facilitator wrote down each concept on a separate white index card and periodically probed for meaning and examples. The cards generated during these sessions were referred to as the “local cards” to differentiate from the “literature cards” generated from the literature review.</p>
-</section>
-<section id="card-sorting" class="level4">
+</div>
+<div id="card-sorting" class="section level4">
 <h4>Card Sorting</h4>
 <p>At the end of the free listing exercise, the facilitator spread the blue literature cards and the white local cards on the table and attempted to match each local card to 1 of the 78 literature cards. Matching sets were removed from the table, and the remaining non-matching literature cards were presented to the group for discussion. Participants were asked to indicate whether they would accept or reject each card as relevant to pediatric HIV disclosure in their context. With the exception of the first discussion group, the facilitator also presented the non-matching local cards generated in every previous session for the group’s consideration. The facilitator used this activity as an opportunity to probe for additional details.</p>
-</section>
-<section id="endorsement-scores" class="level4">
+</div>
+<div id="endorsement-scores" class="section level4">
 <h4>Endorsement Scores</h4>
 <p>At the conclusion of all health worker discussion groups, we constructed mean endorsement scores for each literature and local card. Literature cards with direct matches to a local card were assigned a value of “2”. Literature cards that did not match a local card were either accepted (“1”) or rejected (“0”). Therefore, literature card ratings could range from 0 to 3. We constructed a mean score for each literature card by summing each group’s rating of the card and dividing by the number of group ratings. We took a similar approach to constructing a mean score for each local card that did not match a literature card.</p>
-</section>
-</section>
-<section id="caregiver-discussion-groups" class="level3">
+</div>
+</div>
+<div id="caregiver-discussion-groups" class="section level3">
 <h3>Caregiver Discussion Groups</h3>
 <p>We conducted 6 groups with 18 caregivers. The average group size was 3.0 people (<em>SD</em>=0.6).</p>
-<section id="card-sorting-1" class="level4">
+<div id="card-sorting-1" class="section level4">
 <h4>Card Sorting</h4>
 <p>Caregivers completed a card sorting exercise and participated in an open-ended discussion of issues raised, but did not complete the same free listing activity. Instead, the facilitator presented each caregiver group with the subset of 30 cards selected from the larger pool of 78 literature cards and 35 non-matching local cards generated by the health worker groups. The set of 30 cards consisted of the 10 most and least endorsed literature cards and the 5 most and least endorsed non-matching local cards. Caregivers were given the following instructions:</p>
 <blockquote>
 <p>We are going to begin with a brief activity. I’m going to spread out 30 cards with words written on them in English and Shona. Each card describes something related to telling a child about his or her diagnosis of HIV for the first time. Some of the cards describe things that can make this conversation easier, while other cards describe thing that can make this conversation harder. I would like to know which ideas are most and least important in your view. Working together as a group, I would like you to look at all the cards and put them into three piles. Please put the card here [point] if you think the idea is very important or very true, here [point] if you think the idea is somewhat important or somewhat true, and here [point] if you think the idea is not very important or not very true. There are no right or wrong answers. I will just listen as your group completes the activity. When you are done, I’ll ask you a few questions to better understand your decision-making.</p>
 </blockquote>
-</section>
-<section id="endorsement-scores-1" class="level4">
+</div>
+<div id="endorsement-scores-1" class="section level4">
 <h4>Endorsement Scores</h4>
 <p>Caregivers rated a subset of 30 cards as being of high, medium, or low importance. These ratings were assigned values of “2”, “1”, and “0”, respectively. We constructed an endorsement score for each card by summing each group’s rating and dividing by the number of group ratings.</p>
-</section>
-</section>
-<section id="adolescent-discussion-groups" class="level3">
+</div>
+</div>
+<div id="adolescent-discussion-groups" class="section level3">
 <h3>Adolescent Discussion Groups</h3>
 <p>We conducted 3 discussion groups with 17 adolescents ages 13 to 18. The mean group size was 5.7 people (<em>SD</em>=2.5). Participants were not asked to complete any free listing or card sorting activities, but were instead engaged in an open-ended discussion about how children learn about their status.</p>
-</section>
-</section>
-</section>
-<section id="aim-2-measure-validation" class="level1">
+</div>
+</div>
+</div>
+<div id="aim-2-measure-validation" class="section level1">
 <h1>Aim 2: Measure Validation</h1>
-<section id="research-design" class="level2">
+<div id="research-design" class="section level2">
 <h2>Research Design</h2>
 <p>We recruited a population-based sample of 372 caregivers of HIV-positive children ages 9 to 15 years living in Bikita and Zaka districts in Zimbabwe’s Masvingo Province to participate in a survey about disclosure. Using data from this cross-sectional sample, we then identified a prospective cohort of 123 caregivers who said their HIV-positive child did not know his or her HIV status, and we followed this non-disclosed cohort of caregivers through two additional waves of data collection over the next 12 months.</p>
-</section>
-<section id="setting-and-participants-1" class="level2">
+</div>
+<div id="setting-and-participants-1" class="section level2">
 <h2>Setting and Participants</h2>
 <p>The target population for this study was primary caregivers—parents and guardians— of HIV-positive children ages 9 to 15 living in rural Zimbabwe. The accessible population was limited to the subset of these caregivers living in Bikita and Zaka districts in Masvingo Province whose HIV-positive children were receiving antiretroviral therapy (or were in pre-ART). We selected this location because study partner BHASO (Batanai HIV and AIDS Service Organisation) had established relationships with 42 of the 48 HIV care clinics in these districts and supported a wide network of community health workers called CHASAs (Community HIV &amp; AIDS Support Agents) deemed essential for participant recruitment and retention.</p>
-<p>Masvingo Province is home to approximately 1.5 million people, 23% of whom live in Bikita and Zaka districts <span class="citation" data-cites="zimcensus:2012">[3]</span>. The demographics of Masvingo are similar to the rural clusters in the 2015 Zimbabwe Demographic and Health Survey (DHS) <span class="citation" data-cites="zdhs:2015">[2]</span>, suggesting that the accessible population from which we sampled may be representative of the target population of rural caregivers.</p>
-<p>Zimbabwe continues to experience a generalized HIV/AIDS epidemic with an HIV prevalence rate of 13.5% among adults of reproductive age in 2016 (down from a peak of 27.7% in 1997); the adult HIV prevalence rate in Masvingo is estimated to be slightly lower at 12.9% <span class="citation" data-cites="zdhs:2015">[2]</span>. In 2015, the prevalence of HIV among children aged 0 to 14 years was 1.8% nationally and 1.5% in Masvingo <span class="citation" data-cites="zdhs:2015">[2]</span>.</p>
-</section>
-<section id="procedures-1" class="level2">
+<p>Masvingo Province is home to approximately 1.5 million people, 23% of whom live in Bikita and Zaka districts <span class="citation">[3]</span>. The demographics of Masvingo are similar to the rural clusters in the 2015 Zimbabwe Demographic and Health Survey (DHS) <span class="citation">[2]</span>, suggesting that the accessible population from which we sampled may be representative of the target population of rural caregivers.</p>
+<p>Zimbabwe continues to experience a generalized HIV/AIDS epidemic with an HIV prevalence rate of 13.5% among adults of reproductive age in 2016 (down from a peak of 27.7% in 1997); the adult HIV prevalence rate in Masvingo is estimated to be slightly lower at 12.9% <span class="citation">[2]</span>. In 2015, the prevalence of HIV among children aged 0 to 14 years was 1.8% nationally and 1.5% in Masvingo <span class="citation">[2]</span>.</p>
+</div>
+<div id="procedures-1" class="section level2">
 <h2>Procedures</h2>
-<section id="cross-sectional-study-of-pediatric-hiv-disclosure-prevalence" class="level3">
+<div id="cross-sectional-study-of-pediatric-hiv-disclosure-prevalence" class="section level3">
 <h3>Cross-Sectional Study of Pediatric HIV Disclosure Prevalence</h3>
-<p>At the time of this study, it was estimated that nearly 9 out of 10 HIV-positive children in Masvingo were enrolled in ART <span class="citation" data-cites="unaids:2017">[1]</span>. This made clinic-based recruitment a valid strategy for obtaining a representative sample of caregivers of HIV-positive children.</p>
+<p>At the time of this study, it was estimated that nearly 9 out of 10 HIV-positive children in Masvingo were enrolled in ART <span class="citation">[1]</span>. This made clinic-based recruitment a valid strategy for obtaining a representative sample of caregivers of HIV-positive children.</p>
 <p>We constructed a sampling frame of pediatric HIV patients receiving ART or pre-ART services at 42 of the 48 HIV care clinics in Bikita and Zaka Districts; the 6 excluded facilities were not part of the BHASO network. Once we had an initial list of patient load by clinic, we excluded an additional 21 facilities that provided HIV care to fewer than 13 patients ages 9 to 15. From the remaining 21 clinics, we used ART and pre-ART registers to develop a sampling frame of 592 eligible children (259 in Bikita and 333 in Zaka). We then used stratified simple random sampling by district (proportional to district size) to select a random sample of 450 children; the target sample size was driven by the needs of a larger study on disclosure readiness. We worked with CHASAs assigned to each clinic to update this sample through the removal of children no longer living in the district, children who had died, and duplicate records. After these corrections, the intended sample consisted of 400 children (under the care of 400 primary caregivers). See the participant flow diagram for additional details.</p>
 <div class="figure">
 <img src="img/flow_wide.png" alt="Participant flow diagram." width="720" />
@@ -475,34 +582,34 @@ No
 Participant flow diagram.
 </p>
 </div>
-<p>Between June and August 2016, our team of Zimbabwean enumerators attempted to enroll and survey caregivers in the intended sample. Trained enumerators were assisted by local CHASAs throughout the recruitment process. Overall, the team surveyed 372 of 400 caregivers, a response rate of 93.0%. All surveys were conducted individually in a private setting at the HIV clinics where caregivers pick up medications for their children. Enumerators read each survey item aloud in Shona and recorded participants’ responses on an Android tablet running ODK Collect software <span class="citation" data-cites="brunette:2013">[4]</span>.</p>
-</section>
-<section id="prospective-cohort-study-of-the-disclosure-process" class="level3">
+<p>Between June and August 2016, our team of Zimbabwean enumerators attempted to enroll and survey caregivers in the intended sample. Trained enumerators were assisted by local CHASAs throughout the recruitment process. Overall, the team surveyed 372 of 400 caregivers, a response rate of 93.0%. All surveys were conducted individually in a private setting at the HIV clinics where caregivers pick up medications for their children. Enumerators read each survey item aloud in Shona and recorded participants’ responses on an Android tablet running ODK Collect software <span class="citation">[4]</span>.</p>
+</div>
+<div id="prospective-cohort-study-of-the-disclosure-process" class="section level3">
 <h3>Prospective Cohort Study of the Disclosure Process</h3>
 <p>Using data from the first wave of data collection, we identified a cohort of 123 caregivers who said their HIV-positive child did not know his or her HIV status, and we followed this “non-disclosed” cohort through two additional waves of data collection over the next 12 months. We used the procedures described above and attempted to survey all 123 caregivers in this cohort at 6-months and 12-months following the first wave of data collection.</p>
-</section>
-</section>
-<section id="measures" class="level2">
+</div>
+</div>
+<div id="measures" class="section level2">
 <h2>Measures</h2>
 <p>See <a href="https://github.com/ericpgreen/r2d2/tree/master/materials">here</a> for a link to download the survey files and data dictionary.</p>
-<section id="caregiver-and-child-demographics" class="level3">
+<div id="caregiver-and-child-demographics" class="section level3">
 <h3>Caregiver and Child Demographics</h3>
-<p>We used relevant modules from the 2015 Zimbabwe DHS questionnaire (Phase 7) to collect demographic data on participants, their children, and their households <span class="citation" data-cites="zdhs:2015">[2]</span>.</p>
-</section>
-<section id="caregiver-reported-pediatric-hiv-disclosure" class="level3">
+<p>We used relevant modules from the 2015 Zimbabwe DHS questionnaire (Phase 7) to collect demographic data on participants, their children, and their households <span class="citation">[2]</span>.</p>
+</div>
+<div id="caregiver-reported-pediatric-hiv-disclosure" class="section level3">
 <h3>Caregiver-Reported Pediatric HIV Disclosure</h3>
-<p>We asked a series of questions to assess what the caregiver believes the child knows about his or her HIV status and condition, when the child learned this information, and from whom. We also asked whether the caregiver wanted the child to learn this information when they did. Specifically, we probed whether the child knows: (a) that he or she has a chronic condition requiring medication; (b) that he or she has a medical condition called HIV; (c) how he or she was infected with HIV; and (d) that he or she can spread the virus to others. “Partial disclosure” in this study refers to knowing (b), (c), or (d), but not all three. “Full disclosure” refers to knowing (b), (c), and (d) <span class="citation" data-cites="funck:1997">[5]</span>. We use the term “disclosed” throughout to refer to children who know they have a virus called HIV to be consistent with other studies of pediatric HIV disclosure, but we also report results for partial and full disclosure.</p>
+<p>We asked a series of questions to assess what the caregiver believes the child knows about his or her HIV status and condition, when the child learned this information, and from whom. We also asked whether the caregiver wanted the child to learn this information when they did. Specifically, we probed whether the child knows: (a) that he or she has a chronic condition requiring medication; (b) that he or she has a medical condition called HIV; (c) how he or she was infected with HIV; and (d) that he or she can spread the virus to others. “Partial disclosure” in this study refers to knowing (b), (c), or (d), but not all three. “Full disclosure” refers to knowing (b), (c), and (d) <span class="citation">[5]</span>. We use the term “disclosed” throughout to refer to children who know they have a virus called HIV to be consistent with other studies of pediatric HIV disclosure, but we also report results for partial and full disclosure.</p>
 <p>For caregivers of disclosed children, we asked whether they found out their child’s HIV status before the child, on the same day as the child (e.g., in cases of disclosure by clinic staff), or after the child. This is an important distinction because we were interested in assessing caregivers’ preparation for disclosure, and caregivers who found out after or on the same day as the child had no time to prepare for disclosure.</p>
 <p>For caregivers of non-disclosed children at Wave 1, we asked about their intentions to disclose their child’s HIV status within the next 12 months. We also asked these caregivers (yes or no) whether they had begun to assess their child’s readiness for disclosure, taken any steps to prepare their child, consulted with a health care worker about disclosure, or made a plan to disclose.</p>
 <p>During first two survey waves, we realized that caregivers were keen to tell their story outside the confines of the questionnaire. In the final wave of the prospective cohort, we trained the enumerators in active listening and encouraged them to take notes about caregivers’ stories shared throughout the survey. At the end of each day, a trained qualitative interviewer collected these stories from the enumerators.</p>
-</section>
-<section id="caregiver-reported-worries-about-disclosure" class="level3">
+</div>
+<div id="caregiver-reported-worries-about-disclosure" class="section level3">
 <h3>Caregiver-Reported Worries about Disclosure</h3>
 <p>We created a series of 15 items to assess caregivers’ worries about disclosing the child’s status to the child. For instance, “I worry that telling [him/her] will make [him/her] too sad.” Caregivers responded to each item on a 4-point scale from (0) ‘not at all worried’, (1) ‘not very worried’, (2) ‘somewhat worried’, or (3) ‘very worried’.</p>
-</section>
-</section>
-</section>
-<section id="references" class="level1 unnumbered">
+</div>
+</div>
+</div>
+<div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 <div id="refs" class="references">
 <div id="ref-unaids:2017">
@@ -527,7 +634,7 @@ Participant flow diagram.
 <p>[7] Atwiine B, Kiwanuka J, Musinguzi N, Atwine D, Haberer JE. Understanding the role of age in HIV disclosure rates and patterns for hiv-infected children in southwestern Uganda. AIDS Care 2015;27:424–30. doi:<a href="https://doi.org/10.1080/09540121.2014.978735">10.1080/09540121.2014.978735</a>.</p>
 </div>
 </div>
-</section>
+</div>
 
 
 

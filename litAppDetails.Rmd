@@ -8,7 +8,14 @@ bibliography: r2d2.bib
 csl: vancouver.csl
 ---
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+library(xlsx)
+library(dplyr)
+library(stringr)
+library(knitr)
+library(kableExtra)
+
   rd0 <- function(y) sprintf("%.0f", round(y, 0))
   dpct <- read.xlsx("data and replication files/shiny/litApp/data/disclosure_pct.xlsx", sheetName="Sheet1")
 
@@ -43,10 +50,10 @@ csl: vancouver.csl
     #                   " ",
     #                   study2)) %>% # multibib new appendix
     #mutate(nameRD=ifelse(reportedDerived=="D", paste0("\\textit{", nameRD, "}"), nameRD)) %>%
-    mutate(minAge=rd0(minAge),
-           maxAge=rd0(maxAge)) %>%
+    mutate(minAge=rd0(as.numeric(as.character(minAge))),
+           maxAge=rd0(as.numeric(as.character(maxAge)))) %>%
     mutate(minAge=ifelse(minAge==0, "<1", minAge)) %>%
-    mutate(sampleSize=rd0(sampleSize)) %>%
+    mutate(sampleSize=rd0(as.numeric(as.character(sampleSize)))) %>%
     mutate(reportedDerived=ifelse(reportedDerived=="R", "reported",
                                   ifelse(reportedDerived=="D", 
                                          "derived", "WTF"))) %>%
