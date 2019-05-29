@@ -54,9 +54,8 @@ library(kableExtra)
            maxAge=rd0(as.numeric(as.character(maxAge)))) %>%
     mutate(minAge=ifelse(minAge==0, "<1", minAge)) %>%
     mutate(sampleSize=rd0(as.numeric(as.character(sampleSize)))) %>%
-    mutate(reportedDerived=ifelse(reportedDerived=="R", "reported",
-                                  ifelse(reportedDerived=="D", 
-                                         "derived", "WTF"))) %>%
+    mutate(reportedDerived=ifelse(grepl("R", reportedDerived), "reported",
+                           ifelse(reportedDerived=="D", "derived", "WTF"))) %>%
     #mutate(pctDisclosed=rd1(pctDisclosed)) %>%
     mutate(key=ifelse(grepl("finnegan", key), "THIS STUDY", key)) %>%
     arrange(., desc(pctDisclosed)) %>%
